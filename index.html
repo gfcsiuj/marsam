@@ -1,0 +1,2533 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#333b74">
+    <meta name="description" content="مرسم - نبدع فتتميز | رواد صناعة الهوية البصرية والتصميم الاحترافي">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="مرسم">
+    <link rel="manifest" href="manifest.json">
+    <title>مرسم | نبدع فتتميز - صناعة العلامات التجارية</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="https://www2.0zz0.com/2025/08/31/19/332406064.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --primary: #333b74;
+            --primary-dark: #252c5a;
+            --primary-light: #4a5394;
+            --primary-lighter: #6b73b5;
+            --accent: #8e95d3;
+            --accent-light: #a8aedd;
+            
+            --gradient-primary: linear-gradient(135deg, #333b74 0%, #4a5394 50%, #6b73b5 100%);
+            --gradient-dark: linear-gradient(135deg, #252c5a 0%, #333b74 100%);
+            --gradient-light: linear-gradient(135deg, #4a5394 0%, #8e95d3 100%);
+            --gradient-accent: linear-gradient(135deg, #6b73b5 0%, #a8aedd 100%);
+            
+            --white: #ffffff;
+            --black: #000000;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            
+            --shadow-xs: 0 1px 2px 0 rgba(51, 59, 116, 0.05);
+            --shadow-sm: 0 1px 3px 0 rgba(51, 59, 116, 0.1), 0 1px 2px 0 rgba(51, 59, 116, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(51, 59, 116, 0.1), 0 2px 4px -1px rgba(51, 59, 116, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(51, 59, 116, 0.1), 0 4px 6px -2px rgba(51, 59, 116, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(51, 59, 116, 0.1), 0 10px 10px -5px rgba(51, 59, 116, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(51, 59, 116, 0.25);
+            --shadow-inner: inset 0 2px 4px 0 rgba(51, 59, 116, 0.06);
+            
+            --header-height: 70px;
+            --bottom-nav-height: 75px;
+            
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+            --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            --active-icon-color: #ffffff;
+            --inactive-icon-color: #ffffff;
+            --animation-duration: 600ms;
+            --smooth-ease: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--gray-900);
+            color: var(--gray-900);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--gray-100);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-primary);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gradient-dark);
+        }
+
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--gradient-dark);
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .preloader-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 25px); 
+            grid-template-rows: repeat(auto-fill, 25px);    
+            gap: 12px;
+            padding: 12px;
+            overflow: hidden;
+        }
+
+        .preloader-pattern-item {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .preloader-pattern-item:nth-child(odd) {
+            animation: preloaderPulse 2s ease-in-out infinite;
+        }
+
+        .preloader-pattern-item:nth-child(even) {
+            animation: preloaderPulse 2s ease-in-out infinite 0.5s;
+        }
+
+        @keyframes preloaderPulse {
+            0%, 100% {
+                transform: scale(0.7) rotate(0deg);
+                opacity: 0.1;
+            }
+            50% {
+                transform: scale(1.2) rotate(90deg);
+                opacity: 0.3;
+            }
+        }
+
+        .preloader.hide {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .loader-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .loader-logo {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: 0 auto 30px;
+        }
+
+        .loader-logo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .loader-text {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--white);
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s 0.5s forwards;
+        }
+
+        .loader-progress {
+            width: 250px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            margin: 20px auto 0;
+            overflow: hidden;
+        }
+
+        .loader-progress-bar {
+            height: 100%;
+            background: var(--white);
+            width: 0;
+            border-radius: 2px;
+            animation: loadProgress 3.5s ease-out forwards;
+        }
+
+        @keyframes loadProgress {
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .header.hidden {
+            transform: translateY(-100%);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            transition: transform 0.3s var(--ease-out-back);
+        }
+
+        .logo-wrapper:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 26px;
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .desktop-nav {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .desktop-nav {
+                display: flex;
+                gap: 5px;
+            }
+        }
+
+        .nav-link {
+            padding: 10px 20px;
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            border-radius: 25px;
+            transition: all 0.3s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s var(--ease-out-expo), height 0.5s var(--ease-out-expo);
+        }
+
+        .nav-link:hover {
+            color: var(--white);
+        }
+
+        .nav-link:hover::before {
+            width: 120%;
+            height: 120%;
+        }
+
+        .nav-link span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-cta {
+            padding: 12px 28px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s var(--ease-out-expo);
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .header-cta {
+                display: block;
+            }
+        }
+
+        .header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .nav-wrapper {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            transform-origin: bottom center;
+        }
+        
+        .nav-container {
+            position: relative;
+            width: 480px;
+            height: 75px;
+        }
+
+        .nav-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            border: var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            clip-path: url(#navClipPath);
+        }
+
+        .clip-svg {
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+
+        .floating-circle {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            backdrop-filter: var(--glass-blur);
+            border: var(--glass-border);
+            box-shadow: 0 5px 25px rgba(51, 59, 116, 0.4);
+            border-radius: 50%;
+            bottom: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: left var(--animation-duration) var(--smooth-ease);
+        }
+
+        .floating-circle i {
+            font-size: 24px;
+            color: var(--active-icon-color);
+            transition: opacity 200ms ease;
+        }
+
+        .floating-circle.switching i {
+            opacity: 0;
+        }
+        
+        .nav-items-container {
+            position: absolute;
+            width: 380px;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav-item {
+            cursor: pointer;
+            z-index: 6;
+        }
+
+        .nav-item i {
+            font-size: 24px;
+            color: var(--inactive-icon-color);
+            transition: all 0.3s;
+            padding: 15px;
+        }
+        
+        .nav-item:not(.active):hover i {
+            color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .nav-item.active i {
+            opacity: 0;
+        }
+
+        #navPath {
+            transition: d var(--animation-duration) var(--smooth-ease);
+        }
+
+        @media screen and (max-width: 500px) {
+            .nav-wrapper {
+                transform: translateX(-50%) scale(0.85);
+                bottom: 10px;
+            }
+        }
+
+        @media screen and (max-width: 430px) {
+            .nav-wrapper {
+                transform: translateX(-50%) scale(0.75);
+                bottom: 5px;
+            }
+        }
+
+        @media screen and (max-width: 380px) {
+            .nav-wrapper {
+                transform: translateX(-50%) scale(0.65);
+                bottom: 0;
+            }
+        }
+
+        @media screen and (max-width: 330px) {
+            .nav-wrapper {
+                transform: translateX(-50%) scale(0.55);
+                bottom: -5px;
+            }
+        }
+
+        @media screen and (max-width: 280px) {
+            .nav-wrapper {
+                transform: translateX(-50%) scale(0.5);
+                bottom: -10px;
+            }
+        }
+
+        @media screen and (max-height: 500px) and (orientation: landscape) {
+            .nav-wrapper {
+                transform: translateX(-50%) scale(0.8);
+                bottom: 10px;
+            }
+        }
+
+        @media screen and (max-height: 400px) and (orientation: landscape) {
+            .nav-wrapper {
+                transform: translateX(-50%) scale(0.65);
+                bottom: 5px;
+            }
+        }
+
+        .main {
+            padding-top: var(--header-height);
+            padding-bottom: calc(var(--bottom-nav-height) + 40px);
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-dark);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .pattern-dot {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background-image: url('https://www2.0zz0.com/2025/08/31/20/419587872.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: dot-breathing 6s ease-in-out infinite;
+        }
+
+        @keyframes dot-breathing {
+            0%, 100% {
+                transform: scale(0.8);
+                opacity: 0.4;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        @keyframes background-breathing {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .hero-shape:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            right: -150px;
+            animation-delay: 0s;
+        }
+
+        .hero-shape:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            left: -100px;
+            animation-delay: 5s;
+        }
+
+        .hero-shape:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            left: 10%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(30px, -30px) rotate(120deg);
+            }
+            66% {
+                transform: translate(-20px, 20px) rotate(240deg);
+            }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: clamp(1.8rem, 5vw, 4rem);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: heroFadeIn 1s 0.5s forwards;
+            min-height: 1.2em;
+        }
+
+        .typing-text {
+            display: inline-block;
+            border-left: 3px solid var(--white);
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% {
+                border-color: var(--white);
+            }
+            51%, 100% {
+                border-color: transparent;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.8rem);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: heroFadeIn 1s 0.7s forwards;
+        }
+
+        .hero-description {
+            font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: heroFadeIn 1s 0.9s forwards;
+        }
+
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: nowrap; 
+            opacity: 0;
+            animation: heroFadeIn 1s 1.1s forwards;
+        }
+
+        @media (max-width: 768px) {
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 280px;
+        }
+
+        @media (max-width: 768px) {
+            .btn {
+                max-width: 100%;
+            }
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+        }
+
+        .services {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .services {
+                padding: 60px 15px;
+            }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .section-header {
+                margin-bottom: 40px;
+            }
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .service-card {
+                padding: 25px;
+            }
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s var(--ease-out-back);
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotate(-10deg) scale(1.1);
+        }
+
+        .service-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--white);
+        }
+
+        .service-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+
+        .service-description {
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 0;
+            color: var(--gray-700);
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .service-feature:hover {
+            transform: translateX(-5px);
+            color: var(--primary);
+        }
+
+        .feature-icon {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--primary);
+        }
+
+        .service-quote {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 18px;
+            border-radius: 12px;
+            margin-top: 18px;
+            font-style: italic;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .portfolio {
+            padding: 80px 20px;
+            background: var(--gray-50);
+        }
+
+        @media (max-width: 768px) {
+            .portfolio {
+                padding: 60px 15px;
+            }
+        }
+
+        .portfolio-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+
+        .portfolio-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .portfolio-image {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .portfolio-card:hover .portfolio-image img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .portfolio-content {
+            padding: 25px;
+        }
+
+        .portfolio-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+
+        .portfolio-description {
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .portfolio-tag {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-tag:hover {
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        .testimonials {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .testimonials {
+                padding: 60px 15px;
+            }
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .testimonial-card {
+            background: var(--gradient-light);
+            padding: 35px;
+            border-radius: 20px;
+            color: var(--white);
+            position: relative;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-card {
+                padding: 25px;
+            }
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .quote-icon {
+            width: 35px;
+            height: 35px;
+            opacity: 0.3;
+            margin-bottom: 15px;
+        }
+
+        .quote-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--white);
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 45px;
+            height: 45px;
+            background: var(--white);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .author-role {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .contact {
+            padding: 80px 20px;
+            background: var(--gradient-dark);
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .contact {
+                padding: 60px 15px;
+            }
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .contact-card {
+                padding: 25px;
+            }
+        }
+
+        .contact-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(-5px);
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--white);
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        .contact-value {
+            font-size: 14px;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .payment-methods {
+            margin-top: 25px;
+        }
+
+        .payment-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .payment-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 15px;
+        }
+
+        .payment-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .payment-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .payment-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; 
+        }
+
+        .payment-icon img {
+            width: 100%;
+            object-fit: cover; 
+        }
+
+        .payment-name {
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .footer {
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 35px 20px 120px; 
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: var(--gradient-light);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-text {
+            color: var(--gray-400);
+            font-size: 13px;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s var(--ease-out-expo);
+        }
+
+        .slide-left {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        .slide-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.8s var(--ease-out-expo);
+        }
+
+        .slide-right {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .slide-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.8s var(--ease-out-expo);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.8s var(--ease-out-back);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            left: 20px;
+            width: 55px;
+            height: 55px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-xl);
+            z-index: 999;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-back);
+            animation: pulse 2s infinite;
+        }
+
+        @media (min-width: 768px) {
+            .whatsapp-float {
+                bottom: 110px;
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .whatsapp-float svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--white);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--gradient-dark);
+            z-index: 99998;
+            transform: translateY(-100%);
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+
+        .page-transition.active {
+            transform: translateY(0);
+        }
+
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        [data-reveal].revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s var(--ease-out-expo);
+        }
+
+        [data-reveal-delay="100"].revealed {
+            transition-delay: 0.1s;
+        }
+
+        [data-reveal-delay="200"].revealed {
+            transition-delay: 0.2s;
+        }
+
+        [data-reveal-delay="300"].revealed {
+            transition-delay: 0.3s;
+        }
+
+        [data-reveal-delay="400"].revealed {
+            transition-delay: 0.4s;
+        }
+
+        [data-reveal-delay="500"].revealed {
+            transition-delay: 0.5s;
+        }
+    </style>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</head>
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <div class="page-transition"></div>
+
+    <div class="preloader" id="preloader">
+        <div class="preloader-pattern">
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+            <div class="preloader-pattern-item"></div>
+        </div>
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="loader-logo.svg" alt="شعار التحميل المتحرك" loading="lazy">
+            </div>
+            <div class="loader-text">مرسم</div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="#hero" class="logo-wrapper">
+                <div class="logo-icon">
+                    <img src="https://www2.0zz0.com/2025/08/31/19/332406064.png" alt="مرسم" loading="lazy">
+                </div>
+                <span class="logo-text">مرسم</span>
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="#hero" class="nav-link"><span>الرئيسية</span></a>
+                <a href="#services" class="nav-link"><span>خدماتنا</span></a>
+                <a href="#portfolio" class="nav-link"><span>أعمالنا</span></a>
+                <a href="#testimonials" class="nav-link"><span>آراء العملاء</span></a>
+                <a href="#contact" class="nav-link"><span>تواصل معنا</span></a>
+            </nav>
+
+            <a href="#contact" class="header-cta">تواصل معنا</a>
+        </div>
+    </header>
+
+    <div class="nav-wrapper">
+        <div class="nav-container">
+            <div class="nav-background"></div>
+            <div class="floating-circle" id="floatingCircle"></div>
+            <div class="nav-items-container">
+                <div class="nav-item" data-icon-class="fa-home" data-section="hero"><i class="fas fa-home"></i></div>
+                <div class="nav-item" data-icon-class="fa-star" data-section="services"><i class="fas fa-star"></i></div>
+                <div class="nav-item" data-icon-class="fa-briefcase" data-section="portfolio"><i class="fas fa-briefcase"></i></div>
+                <div class="nav-item" data-icon-class="fa-comment" data-section="testimonials"><i class="fas fa-comment"></i></div>
+                <div class="nav-item" data-icon-class="fa-envelope" data-section="contact"><i class="fas fa-envelope"></i></div>
+            </div>
+        </div>
+    </div>
+    
+    <svg class="clip-svg">
+        <defs>
+            <clipPath id="navClipPath">
+                <path id="navPath" d=""></path>
+            </clipPath>
+        </defs>
+    </svg>
+
+    <main class="main">
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <div class="hero-pattern"></div>
+                <div class="hero-shape"></div>
+                <div class="hero-shape"></div>
+                <div class="hero-shape"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="typing-text"></span>
+                </h1>
+                <p class="hero-subtitle">نُضيء فكرتك ونروي قصتك بصنع علامتك التجارية</p>
+                <p class="hero-description">
+                    فريق من المحترفين والمبدعين في مجال التصميم<br>
+                    ساعدنا أكثر من 250 عميل على النجاح والتميز<br>
+                    مع مرسم نضيء أفكارك
+                </p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">
+                        <span>اكتشف خدماتنا</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                        </svg>
+                    </a>
+                    <a href="#portfolio" class="btn btn-secondary">
+                        <span>شاهد أعمالنا</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="section-header">
+                <h2 class="section-title" data-reveal>خدماتنا المتميزة</h2>
+                <p class="section-subtitle" data-reveal data-reveal-delay="100">نقدم حلولاً إبداعية متكاملة لتلبية جميع احتياجاتك</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">تصميم هوية بصرية</h3>
+                    <p class="service-description">هوية بصرية متكاملة تعكس قيم علامتك التجارية وتميزك في السوق</p>
+                    <ul class="service-features">
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>الشعار الاحترافي</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>ألوان خاصة بالبراند</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>نمط خاص بالبراند</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>قوالب الاستوري</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>الخطوط التي تناسب البراند</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>هايلايتات احترافية</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>بطاقة أعمال ومطبوعات</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>بوستات حسب الطلب</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>إرشادات الاستخدام + هدية شعار متحرك</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">تصميم لوجو</h3>
+                    <p class="service-description">شعار مميز يحكي قصة علامتك التجارية بإبداع</p>
+                    <ul class="service-features">
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>الشعار بالألوان المختلفة</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>ملف التصميم الأصلي Ai</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>ملف PDF عالي الجودة</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>صور PNG بدون خلفية</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>عرض احترافي للشعار</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>إرشادات استخدام الشعار</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>الخطوط والألوان + هدية بوستر</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-4v4h-2v-4H9V9h4V5h2v4h4v2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">بوسترات سوشيال ميديا</h3>
+                    <p class="service-description">تصاميم احترافية تزيد من تفاعل جمهورك على منصات التواصل</p>
+                    <ul class="service-features">
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>تصاميم مخصصة لكل منصة</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>قوالب قابلة للتعديل</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>محتوى مرئي جذاب</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">تصميم جميع المطبوعات</h3>
+                    <p class="service-description">مطبوعات احترافية بجودة عالية لجميع احتياجاتك</p>
+                    <ul class="service-features">
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>بطاقات أعمال فاخرة</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>بروشورات وكتالوجات</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>ملصقات ولافتات</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">ترتيب صفحات احترافي</h3>
+                    <p class="service-description">نرتب صفحاتك على السوشيال ميديا بشكل يجذب العملاء</p>
+                    <ul class="service-features">
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>الشعار: قصتك نسردها بصرياً</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>هايلايت: استثمر في نجاحك</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>صور تعريفية بنمط احترافي</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>بايو احترافي مخصص</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>ثلاث بوسترات احترافية</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">فيديوهات موشن جرافيك</h3>
+                    <p class="service-description">فيديوهات متحركة احترافية تشرح خدماتك بطريقة جذابة</p>
+                    <ul class="service-features">
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>فيديوهات تعريفية</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>إعلانات متحركة</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>انترو وأوترو احترافي</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">تصوير إعلانات</h3>
+                    <p class="service-description">جلسات تصوير احترافية لمنتجاتك وخدماتك</p>
+                    <ul class="service-features">
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>تصوير منتجات احترافي</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>معالجة وتحرير الصور</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>إضاءة احترافية</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in" style="grid-column: span 1;">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">برمجة المواقع الإلكترونية</h3>
+                    <p class="service-description">نحول أفكارك إلى واقع رقمي مذهل</p>
+                    <ul class="service-features">
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>تصميم موقع منيو إلكتروني</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>تصميم متجر إلكتروني</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>مواقع تعريفية للشركات</span>
+                        </li>
+                        <li class="service-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <span>تحسين محركات البحث SEO</span>
+                        </li>
+                    </ul>
+                    <div class="service-quote">
+                        "موقعك الإلكتروني هو واجهتك الرقمية، دعنا نصنع لك تجربة لا تُنسى"
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio" id="portfolio">
+            <div class="section-header">
+                <h2 class="section-title" data-reveal>أعمالنا المميزة</h2>
+                <p class="section-subtitle" data-reveal data-reveal-delay="100">نفخر بما أنجزناه مع عملائنا</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?w=400&h=300&fit=crop" alt="هوية بصرية لمطعم" loading="lazy">
+                        <span class="portfolio-badge">هوية بصرية</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">مطعم ليالي الشرق</h3>
+                        <p class="portfolio-description">
+                            هوية بصرية متكاملة لمطعم عربي أصيل، تجمع بين الأصالة والحداثة في تصميم فريد
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">لوجو</span>
+                            <span class="portfolio-tag">قائمة طعام</span>
+                            <span class="portfolio-tag">بطاقات</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop" alt="متجر إلكتروني" loading="lazy">
+                        <span class="portfolio-badge">متجر إلكتروني</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">متجر الأناقة</h3>
+                        <p class="portfolio-description">
+                            تصميم وبرمجة متجر إلكتروني متكامل مع نظام دفع آمن وواجهة مستخدم سلسة
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">تصميم ويب</span>
+                            <span class="portfolio-tag">UI/UX</span>
+                            <span class="portfolio-tag">متاجر</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=300&fit=crop" alt="حملة سوشيال ميديا" loading="lazy">
+                        <span class="portfolio-badge">سوشيال ميديا</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">حملة رمضان</h3>
+                        <p class="portfolio-description">
+                            حملة إعلانية متكاملة على منصات التواصل الاجتماعي حققت نسبة تفاعل عالية
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">إنستغرام</span>
+                            <span class="portfolio-tag">فيسبوك</span>
+                            <span class="portfolio-tag">إعلانات</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop" alt="تطبيق موبايل" loading="lazy">
+                        <span class="portfolio-badge">تطبيق موبايل</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">تطبيق صحتك</h3>
+                        <p class="portfolio-description">
+                            تصميم واجهات تطبيق صحي متكامل مع تجربة مستخدم مبتكرة وسهلة الاستخدام
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">UI Design</span>
+                            <span class="portfolio-tag">Mobile App</span>
+                            <span class="portfolio-tag">صحة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=400&h=300&fit=crop" alt="موشن جرافيك" loading="lazy">
+                        <span class="portfolio-badge">موشن جرافيك</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">فيديو تعريفي</h3>
+                        <p class="portfolio-description">
+                            فيديو موشن جرافيك احترافي لشركة تقنية، يوضح الخدمات بطريقة جذابة ومبسطة
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">2D Animation</span>
+                            <span class="portfolio-tag">فيديو</span>
+                            <span class="portfolio-tag">إنترو</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop" alt="موقع شركة" loading="lazy">
+                        <span class="portfolio-badge">موقع ويب</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">شركة الابتكار</h3>
+                        <p class="portfolio-description">
+                            موقع تعريفي احترافي لشركة استشارات مع نظام إدارة محتوى متطور
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">WordPress</span>
+                            <span class="portfolio-tag">SEO</span>
+                            <span class="portfolio-tag">شركات</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <div class="section-header">
+                <h2 class="section-title" data-reveal>آراء عملائنا</h2>
+                <p class="section-subtitle" data-reveal data-reveal-delay="100">شهادات حقيقية من عملاء حقيقيين</p>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonials-grid">
+                    <div class="testimonial-card fade-in">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">
+                            تجربة رائعة مع فريق مرسم، احترافية عالية وإبداع لا محدود. ساعدوني في بناء هوية بصرية قوية لشركتي.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">أ</div>
+                            <div class="author-info">
+                                <div class="author-name">أحمد الكريمي</div>
+                                <div class="author-role">مدير شركة تقنية</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card fade-in">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">
+                            الجودة والسرعة في التنفيذ، هذا ما يميز مرسم. تصاميمهم نقلت علامتي التجارية لمستوى آخر تماماً.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">س</div>
+                            <div class="author-info">
+                                <div class="author-name">سارة محمد</div>
+                                <div class="author-role">صاحبة متجر أزياء</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card fade-in">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">
+                            فريق محترف يفهم احتياجات العميل ويترجمها إلى إبداع بصري مذهل. أنصح بالتعامل معهم بشدة.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">م</div>
+                            <div class="author-info">
+                                <div class="author-name">محمد علي</div>
+                                <div class="author-role">رائد أعمال</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="section-header">
+                <h2 class="section-title" style="color: white;" data-reveal>تواصل معنا</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);" data-reveal data-reveal-delay="100">
+                    نحن هنا لنساعدك في تحقيق أهدافك
+                </p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-grid">
+                    <div class="contact-card fade-in">
+                        <h3 class="contact-title">معلومات التواصل</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-label">الهاتف</div>
+                                <div class="contact-value">07829115167 - 07763402068</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-label">البريد الإلكتروني</div>
+                                <div class="contact-value">MARSAM.OFFICIAL25@GMAIL.COM</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-label">انستغرام</div>
+                                <div class="contact-value">MARSAM.AP</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-label">تلجرام</div>
+                                <div class="contact-value">MARSAM_25</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <h3 class="contact-title">طرق الدفع المتاحة</h3>
+                        <div class="payment-methods">
+                            <div class="payment-list">
+                                <div class="payment-item">
+                                    <div class="payment-icon">
+                                        <img src="https://yt3.googleusercontent.com/ytc/AIdro_lU1-zl30sWy1qpcmc4xtjmsZ6UQzbVeL93m5Pnx0xhsA=s900-c-k-c0x00ffffff-no-rj" alt="زين كاش" loading="lazy">
+                                    </div>
+                                    <span class="payment-name">زين كاش</span>
+                                </div>
+                                
+                                <div class="payment-item">
+                                    <div class="payment-icon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="ماستر كارد" loading="lazy">
+                                    </div>
+                                    <span class="payment-name">ماستر كارد</span>
+                                </div>
+                                
+                                <div class="payment-item">
+                                    <div class="payment-icon">
+                                        <img src="https://pbs.twimg.com/profile_images/1715974320357257216/gxrsT-G6_400x400.jpg" alt="آسيا سيل" loading="lazy">
+                                    </div>
+                                    <span class="payment-name">رصيد آسيا</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">مرسم</div>
+            <p class="footer-text">© 2025 مرسم - جميع الحقوق محفوظة | نبدع فتتميز</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/9647829115167" target="_blank" class="whatsapp-float">
+        <svg viewBox="0 0 24 24">
+            <path d="M16.75 13.96c.25.13.41.2.46.3.06.11.04.61-.21 1.18-.2.56-1.24 1.1-1.7 1.12-.46.02-.47.36-2.96-.73-2.49-1.09-3.99-3.75-4.11-3.92-.12-.17-.96-1.38-.92-2.61.05-1.22.69-1.8.95-2.04.24-.26.51-.29.68-.26h.47c.15 0 .36-.06.55.45l.69 1.87c.06.13.1.28.01.44l-.27.41-.39.42c-.12.12-.26.25-.12.5.12.26.62 1.09 1.32 1.78.91.88 1.71 1.17 1.95 1.3.24.14.39.12.54-.04l.81-.94c.19-.25.35-.19.58-.11l1.67.88M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10c-1.97 0-3.8-.57-5.35-1.55L2 22l1.55-4.65A9.969 9.969 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8c0 1.72.54 3.31 1.46 4.61L4.5 19.5l2.89-.96A7.95 7.95 0 0 0 12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8z"/>
+        </svg>
+    </a>
+
+    <script>
+        const typingText = document.querySelector('.typing-text');
+        const phrases = [
+            'مرسم نبدع فتتميز',
+            'إبداعك يبدأ من هنا',
+            'نصنع الفرق بالتصميم',
+            'شريكك نحو النجاح',
+            'أفكارك تستحق الإبداع'
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        function typeWriter() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 100;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typingSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typingSpeed = 500;
+            }
+
+            setTimeout(typeWriter, typingSpeed);
+        }
+
+        window.addEventListener('load', () => {
+            setTimeout(typeWriter, 500);
+        });
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hide');
+            }, 3500);
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.scrollY / scrollHeight) * 100;
+            scrollProgress.style.width = scrolled + '%';
+        });
+
+        let lastScroll = 0;
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        const floatingCircle = document.getElementById('floatingCircle');
+        const navPath = document.getElementById('navPath');
+        const navItems = document.querySelectorAll('.nav-item');
+        let currentActiveIndex = 0;
+        let isAnimating = false;
+
+        function createPath(centerX) {
+            const totalWidth = 480;
+            const totalHeight = 75;
+            const cornerRadius = 25;
+            const notchWidth = 110;
+            const notchDepth = 48;
+            const controlPointX = 40;
+            
+            const path = `
+                M 0,${totalHeight - cornerRadius}
+                Q 0,${totalHeight} ${cornerRadius},${totalHeight}
+                L ${totalWidth - cornerRadius},${totalHeight}
+                Q ${totalWidth},${totalHeight} ${totalWidth},${totalHeight - cornerRadius}
+                L ${totalWidth},${cornerRadius}
+                Q ${totalWidth},0 ${totalWidth - cornerRadius},0
+                L ${centerX + notchWidth / 2},0
+                C ${centerX + controlPointX},0 ${centerX + controlPointX},${notchDepth} ${centerX},${notchDepth}
+                C ${centerX - controlPointX},${notchDepth} ${centerX - controlPointX},0 ${centerX - notchWidth / 2},0
+                L ${cornerRadius},0
+                Q 0,0 0,${cornerRadius}
+                Z
+            `;
+            return path;
+        }
+
+        function animatePath(fromCenterX, toCenterX, duration) {
+            const startTime = performance.now();
+            
+            function animate(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                const easeProgress = 1 - Math.pow(1 - progress, 3);
+                const currentCenterX = fromCenterX + (toCenterX - fromCenterX) * easeProgress;
+                
+                navPath.setAttribute('d', createPath(currentCenterX));
+                
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                }
+            }
+            
+            requestAnimationFrame(animate);
+        }
+
+        function updateUI(index) {
+            if (index === currentActiveIndex || isAnimating) return;
+            isAnimating = true;
+
+            const iconsContainerWidth = 380;
+            const totalContainerWidth = 480;
+            const padding = (totalContainerWidth - iconsContainerWidth) / 2;
+            const itemsCount = navItems.length;
+            const spacePerItem = iconsContainerWidth / itemsCount;
+            
+            const oldReversedIndex = (itemsCount - 1) - currentActiveIndex;
+            const oldCenterX = padding + (oldReversedIndex * spacePerItem) + (spacePerItem / 2);
+            
+            const reversedIndex = (itemsCount - 1) - index;
+            const centerX = padding + (reversedIndex * spacePerItem) + (spacePerItem / 2);
+
+            animatePath(oldCenterX, centerX, 600);
+            
+            const circleWidth = 60;
+            floatingCircle.style.left = `calc(${centerX}px - ${circleWidth / 2}px)`;
+
+            floatingCircle.classList.add('switching');
+            
+            setTimeout(() => {
+                const iconClass = navItems[index].dataset.iconClass;
+                floatingCircle.innerHTML = `<i class="fas ${iconClass}"></i>`;
+                floatingCircle.classList.remove('switching');
+            }, 200);
+
+            navItems.forEach(item => item.classList.remove('active'));
+            navItems[index].classList.add('active');
+            
+            currentActiveIndex = index;
+
+            setTimeout(() => {
+                isAnimating = false;
+            }, 600);
+        }
+
+        navItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                updateUI(index);
+                const section = item.dataset.section;
+                if (section) {
+                    const target = document.getElementById(section);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        const sections = document.querySelectorAll('section[id]');
+        
+        function updateActiveNavOnScroll() {
+            const scrollY = window.scrollY + 200;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navItems.forEach((item, index) => {
+                        if (item.dataset.section === sectionId) {
+                            updateUI(index);
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavOnScroll);
+
+        window.addEventListener('load', () => {
+            const initialIndex = 0;
+            const iconsContainerWidth = 380;
+            const totalContainerWidth = 480;
+            const padding = (totalContainerWidth - iconsContainerWidth) / 2;
+            const itemsCount = navItems.length;
+            const spacePerItem = iconsContainerWidth / itemsCount;
+            const reversedIndex = (itemsCount - 1) - initialIndex;
+            const centerX = padding + (reversedIndex * spacePerItem) + (spacePerItem / 2);
+            
+            navPath.setAttribute('d', createPath(centerX));
+            const circleWidth = 60;
+            floatingCircle.style.left = `calc(${centerX}px - ${circleWidth / 2}px)`;
+            const iconClass = navItems[initialIndex].dataset.iconClass;
+            floatingCircle.innerHTML = `<i class="fas ${iconClass}"></i>`;
+            navItems[initialIndex].classList.add('active');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    if (entry.target.hasAttribute('data-reveal')) {
+                        entry.target.classList.add('revealed');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-in, [data-reveal]').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const patternContainer = document.querySelector('.hero-pattern');
+            if (patternContainer) {
+                const isMobile = window.innerWidth <= 768;
+                const numberOfDots = isMobile ? 85 : 0;
+
+                for (let i = 0; i < numberOfDots; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('pattern-dot');
+                    
+                    const randomDelay = Math.random() * 5;
+                    dot.style.animationDelay = `${randomDelay}s`;
+                    
+                    patternContainer.appendChild(dot);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
