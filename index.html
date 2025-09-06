@@ -395,7 +395,7 @@
         width: 320px;
         max-width: 85vw;
                 flex-direction: column;
-                justify-content: center;
+        justify-content: flex-start;
         align-items: flex-start; /* For RTL, start is right */
         gap: 1rem;
         padding: 6rem 2rem;
@@ -1653,14 +1653,6 @@
                 <span class="logo-text">مرسم للتسويق الالكتروني</span>
             </a>
 
-            <nav class="desktop-nav" id="desktop-nav" data-visible="false">
-                <a href="#hero" class="nav-link"><span>الرئيسية</span><i class="fas fa-home"></i></a>
-                <a href="#services" class="nav-link"><span>خدماتنا</span><i class="fas fa-star"></i></a>
-                <a href="#portfolio" class="nav-link"><span>أعمالنا</span><i class="fas fa-briefcase"></i></a>
-                <a href="#testimonials" class="nav-link"><span>آراء العملاء</span><i class="fas fa-comment-dots"></i></a>
-                <a href="#contact" class="nav-link"><span>تواصل معنا</span><i class="fas fa-envelope"></i></a>
-            </nav>
-
             <a href="#contact" class="header-cta">تواصل معنا</a>
             <button class="mobile-nav-toggle" aria-controls="desktop-nav" aria-expanded="false">
                 <i class="fas fa-bars" aria-hidden="true"></i>
@@ -1669,6 +1661,14 @@
             </button>
         </div>
     </header>
+
+    <nav class="desktop-nav" id="desktop-nav" data-visible="false">
+        <a href="#hero" class="nav-link"><span>الرئيسية</span><i class="fas fa-home"></i></a>
+        <a href="#services" class="nav-link"><span>خدماتنا</span><i class="fas fa-star"></i></a>
+        <a href="#portfolio" class="nav-link"><span>أعمالنا</span><i class="fas fa-briefcase"></i></a>
+        <a href="#testimonials" class="nav-link"><span>آراء العملاء</span><i class="fas fa-comment-dots"></i></a>
+        <a href="#contact" class="nav-link"><span>تواصل معنا</span><i class="fas fa-envelope"></i></a>
+    </nav>
 
     <div class="nav-wrapper">
         <div class="nav-container">
