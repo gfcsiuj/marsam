@@ -1,0 +1,27 @@
+{
+  "name": "مرسم للتسويق الإلكتروني",
+  "short_name": "مرسم",
+  "description": "مرسم للتسويق الإلكتروني - نبدع فتتميز",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#252c5a",
+  "theme_color": "#333b74",
+  "icons": [
+    {
+      "src": "https://www2.0zz0.com/2025/08/31/19/332406064.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://www2.0zz0.com/2025/08/31/19/332406064.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "https://www2.0zz0.com/2025/08/31/19/332406064.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
